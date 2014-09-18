@@ -13,17 +13,17 @@ import (
 func Scan() cli.Command {
 	return cli.Command{
 		Name:  "scan",
-		Usage: "Scan for connected devices on Serial, USB, or Bluetooth ports",
+		Usage: "Scan for connected devices on Serial, USB, Bluetooth, or Bluetooth LE ports",
 		Action: func(c *cli.Context) {
 			valid := false
-			for _, s := range []string{"serial", "usb", "bluetooth"} {
+			for _, s := range []string{"serial", "usb", "bluetooth", "ble"} {
 				if s == c.Args().First() {
 					valid = true
 				}
 			}
 
 			usage := func() {
-				fmt.Println("Usage: gort scan [serial|usb|bluetooth]")
+				fmt.Println("Usage: gort scan [serial|usb|bluetooth|ble]")
 			}
 
 			if valid == false {
@@ -81,6 +81,11 @@ func Scan() cli.Command {
 					}
 				case "bluetooth":
 					cmd := exec.Command("hcitool", "scan")
+					cmd.Stdout = os.Stdout
+					cmd.Stderr = os.Stderr
+					cmd.Run()
+				case "ble":
+					cmd := exec.Command("hcitool", "lescan")
 					cmd.Stdout = os.Stdout
 					cmd.Stderr = os.Stderr
 					cmd.Run()
