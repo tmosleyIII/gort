@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/codegangsta/cli"
-	"./commands"
+	"github.com/hybridgroup/gort/commands"
 	"os"
 )
 
