@@ -2,12 +2,14 @@ package commands
 
 import (
 	"fmt"
-	"github.com/codegangsta/cli"
 	"io/ioutil"
+	"log"
 	"os"
 	"os/exec"
 	"path/filepath"
 	"runtime"
+
+	"github.com/codegangsta/cli"
 )
 
 func Scan() cli.Command {
