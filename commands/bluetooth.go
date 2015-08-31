@@ -22,11 +22,11 @@ func Bluetooth() cli.Command {
 				}
 			}
 			usage := func() {
-				fmt.Println("Invalid/no subcommand supplied.\n")
+				fmt.Println("Invalid/no subcommand supplied.")
 				fmt.Println("Usage:")
 				fmt.Println("gort bluetooth pair <address> [hciX]")
 				fmt.Println("gort bluetooth unpair <address> [hciX]")
-				fmt.Println("gort bluetooth connect <dev> [hciX]\n")
+				fmt.Println("gort bluetooth connect <dev> [hciX]")
 			}
 
 			if runtime.GOOS == "darwin" {

@@ -24,7 +24,7 @@ func Arduino() cli.Command {
 			}
 
 			usage := func() {
-				fmt.Println("Invalid/no subcommand supplied.\n")
+				fmt.Println("Invalid/no subcommand supplied.")
 				fmt.Println("Usage:")
 				fmt.Println("  gort arduino install                                  # installs avrdude to allow uploading of sketches to Arduino")
 				fmt.Println("  gort arduino upload firmata [port]                    # uploads Firmata sketch to Arduino")

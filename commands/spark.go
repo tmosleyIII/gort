@@ -3,13 +3,14 @@ package commands
 import (
 	"bytes"
 	"fmt"
-	"github.com/codegangsta/cli"
 	"io"
 	"log"
 	"mime/multipart"
 	"net/http"
 	"os"
 	"path"
+
+	"github.com/codegangsta/cli"
 )
 
 func Spark() cli.Command {
@@ -25,7 +26,7 @@ func Spark() cli.Command {
 			}
 
 			usage := func() {
-				fmt.Println("Invalid/no subcommand supplied.\n")
+				fmt.Println("Invalid/no subcommand supplied.")
 				fmt.Println("Usage:")
 				fmt.Println("  gort spark upload [accessToken] [deviceId] [default|voodoospark|path name] # uploads sketch to Spark")
 			}
